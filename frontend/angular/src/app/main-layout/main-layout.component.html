@@ -1,0 +1,6 @@
+<div class="w-screen h-screen flex flex-col items-center bg-zinc-900">
+    <app-header></app-header>
+    <app-add-task (requestSuccess)="handleRequestSuccess()"></app-add-task>
+    <app-task-list [tasks]="tasks" (requestSuccess)="handleRequestSuccess()"></app-task-list>
+  </div>
+  

@@ -1,0 +1,16 @@
+<div class="flex flex-col justify-center items-center w-[42rem]">
+    <span class="text-2xl text-zinc-50 font-semibold mb-4">Tasks</span>
+    <div class="w-[42rem] flex flex-col gap-5 items-center min-h-72 bg-zinc-800 rounded-md p-6"
+         [ngClass]="{'justify-center': !tasks?.length}">
+      <ng-container *ngIf="tasks?.length; else emptyList">
+        <app-task *ngFor="let task of tasks"
+                  [task]="task"
+                  (requestSuccess)="handleRequestSuccess()">
+        </app-task>
+      </ng-container>
+      <ng-template #emptyList>
+        <span class="text-zinc-50">Task list is empty. Add one!</span>
+      </ng-template>
+    </div>
+  </div>
+  

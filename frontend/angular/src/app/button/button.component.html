@@ -1,0 +1,17 @@
+<button [ngClass]="getButtonClasses()" (click)="onClick()">
+    <ng-container *ngIf="type === 'add'">Add</ng-container>
+    <ng-container *ngIf="type === 'edit'">
+      <svg-icon name="pencil" class="w-6 text-slate-50"></svg-icon>
+    </ng-container>
+    <ng-container *ngIf="type === 'delete'">
+      <svg-icon name="trash" class="w-6 text-red-500"></svg-icon>
+    </ng-container>
+    <ng-container *ngIf="type === 'save'">Save</ng-container>
+    <ng-container *ngIf="type === 'restart'">
+      <svg-icon name="arrow-path" class="w-6 text-blue-300"></svg-icon>
+    </ng-container>
+    <ng-container *ngIf="type === 'complete'">
+      <svg-icon name="check-circle" class="w-6 text-green-500"></svg-icon>
+    </ng-container>
+  </button>
+  
